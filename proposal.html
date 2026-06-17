@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proposal for Circular Economy Company | We Make IT</title>
+  <meta name="description" content="A website and digital marketing proposal prepared by We Make IT for Circular Economy Company, June 2026." />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/png" href="assets/logo_circle_small.png" />
+
+  <style>
+    /*
+     * We Make IT colour system
+     * --wm-green #1F6F3F on white: 6.09:1 (AA, fine for large/bold text ≥18px)
+     * --wm-deep  #144D2C on white: 9.76:1 AAA - headings, prices, emphasis
+     * --text     #1a1a1a on white: ~18:1  AAA
+     * --muted    #555555 on white: 7.55:1 AAA
+     * --wm-green #1F6F3F on --tint #EAF3EC: approx 5.4:1 (AA, fine for large text)
+     * --wm-deep  #144D2C on --tint #EAF3EC: approx 8.7:1 AAA
+     */
+    :root {
+      --green:      #1F6F3F;
+      --deep:       #144D2C;
+      --tint:       #EAF3EC;
+      --tint-mid:   #cfe3d3;
+      --text:       #1a1a1a;
+      --muted:      #555555;
+      --bg:         #ffffff;
+      --bg-off:     #f8faf8;
+      --border:     #dde8df;
+      --max-w:      760px;
+      --px:         clamp(20px, 5vw, 48px);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--green); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+    a:hover { color: var(--deep); }
+
+    ul { list-style: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ── Shared nav (matches index.html/solution.html) ─────────── */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin-inline: auto;
+      padding-inline: var(--px);
+      height: 64px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+      flex-shrink: 0;
+    }
+    .nav-brand-logo { border-radius: 50%; }
+    .nav-brand-text { display: flex; flex-direction: column; line-height: 1.2; }
+    .nav-brand-name { font-size: 0.875rem; font-weight: 700; color: var(--text); }
+    .nav-brand-sub  { font-size: 0.6875rem; color: var(--muted); }
+    .brand-it       { color: var(--green); font-style: italic; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-left: auto;
+    }
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: background 0.15s, color 0.15s;
+    }
+    .nav-link:hover { color: var(--text); background: var(--tint); }
+    .nav-link[aria-current="page"] {
+      color: var(--deep);
+      background: var(--tint);
+      font-weight: 600;
+    }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      color: var(--text);
+      margin-left: auto;
+    }
+
+    /* ── Layout container ──────────────────────────────────────── */
+    .page-wrap {
+      max-width: var(--max-w);
+      margin-inline: auto;
+      padding-inline: var(--px);
+    }
+
+    /* ── Header ────────────────────────────────────────────────── */
+    .proposal-header {
+      background: var(--tint);
+      border-bottom: 1px solid var(--tint-mid);
+      padding: 72px var(--px) 64px;
+    }
+    .proposal-header-inner {
+      max-width: var(--max-w);
+      margin-inline: auto;
+    }
+
+    .wordmark {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .wordmark-logo { border-radius: 50%; }
+    .wordmark-text {
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: var(--deep);
+    }
+    .wordmark-text span { color: var(--green); font-style: italic; }
+
+    .proposal-meta {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 28px;
+      letter-spacing: 0.01em;
+    }
+
+    .proposal-h1 {
+      font-size: clamp(1.625rem, 4vw, 2.375rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--deep);
+      margin-bottom: 18px;
+    }
+
+    .proposal-sub {
+      font-size: 1.0625rem;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 54ch;
+    }
+
+    /* ── Main sections ─────────────────────────────────────────── */
+    .section { padding: 64px 0; border-bottom: 1px solid var(--border); }
+    .section:last-child { border-bottom: none; }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 6px;
+    }
+
+    .section-h2 {
+      font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+      font-weight: 700;
+      color: var(--deep);
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .section-intro {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 40px;
+      max-width: 58ch;
+    }
+
+    /* ── Phase cards ───────────────────────────────────────────── */
+    .phase-stack { display: flex; flex-direction: column; gap: 20px; }
+
+    .phase-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--bg);
+    }
+
+    .phase-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 22px 28px 18px;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-off);
+    }
+
+    .phase-title-group { display: flex; flex-direction: column; gap: 3px; }
+
+    .phase-tag {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+
+    .phase-name {
+      font-size: 1.0625rem;
+      font-weight: 700;
+      color: var(--deep);
+      line-height: 1.2;
+    }
+
+    .phase-price {
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .phase-price-amount {
+      font-size: 1.375rem;
+      font-weight: 800;
+      color: var(--deep);
+      line-height: 1;
+    }
+
+    .phase-price-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    .phase-price-was {
+      font-size: 0.875rem;
+      color: var(--muted);
+      text-decoration: line-through;
+      margin-right: 6px;
+    }
+
+    .phase-discount-badge {
+      display: inline-block;
+      background: var(--tint);
+      color: var(--deep);
+      border: 1px solid var(--tint-mid);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      padding: 2px 8px;
+      border-radius: 100px;
+      margin-top: 5px;
+    }
+
+    .phase-body { padding: 24px 28px; }
+
+    .phase-items { display: flex; flex-direction: column; gap: 14px; }
+
+    .phase-item {
+      display: flex;
+      gap: 12px;
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: var(--text);
+    }
+
+    .phase-item-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+
+    /* included card (reporting) */
+    .phase-card--included .phase-head { background: transparent; }
+    .phase-card--included .phase-price-amount {
+      font-size: 1rem;
+      color: var(--green);
+    }
+
+    /* ── Pricing section ───────────────────────────────────────── */
+    .pricing-intro {
+      font-size: 0.9375rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 32px;
+      padding: 18px 22px;
+      background: var(--bg-off);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 36px;
+    }
+
+    .pricing-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--bg);
+    }
+
+    .pricing-card--recommended {
+      border-color: var(--green);
+      box-shadow: 0 4px 20px rgba(31, 111, 63, 0.1);
+    }
+
+    .pricing-card-head {
+      padding: 24px 24px 20px;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-off);
+    }
+    .pricing-card--recommended .pricing-card-head {
+      background: var(--tint);
+      border-bottom-color: var(--tint-mid);
+    }
+
+    .pricing-rec-badge {
+      display: inline-block;
+      background: var(--green);
+      color: #fff;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 100px;
+      margin-bottom: 10px;
+    }
+
+    .pricing-tier {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--deep);
+      margin-bottom: 6px;
+    }
+
+    .pricing-amount {
+      font-size: 1.875rem;
+      font-weight: 800;
+      color: var(--deep);
+      line-height: 1;
+    }
+
+    .pricing-per {
+      font-size: 0.875rem;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .pricing-card-body { padding: 22px 24px; }
+
+    .pricing-items { display: flex; flex-direction: column; gap: 11px; }
+    .pricing-item {
+      display: flex;
+      gap: 10px;
+      font-size: 0.9rem;
+      line-height: 1.55;
+      color: var(--text);
+    }
+    .pricing-item-check {
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      background: rgba(31, 111, 63, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .pricing-item-check svg { color: var(--deep); }
+
+    .pricing-summary {
+      padding: 20px 24px;
+      background: var(--tint);
+      border: 1px solid var(--tint-mid);
+      border-radius: 10px;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+    .pricing-summary strong { color: var(--deep); }
+
+    /* ── Consulting section ────────────────────────────────────── */
+    .consulting-block {
+      padding: 28px 28px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--bg-off);
+    }
+    .consulting-h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--deep);
+      margin-bottom: 10px;
+    }
+    .consulting-body {
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    /* ── Why section ───────────────────────────────────────────── */
+    .why-section {
+      background: var(--bg-off);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .why-paras { display: flex; flex-direction: column; gap: 22px; }
+    .why-para { font-size: 0.9375rem; line-height: 1.75; color: var(--text); }
+    .why-para strong { color: var(--deep); }
+
+    /* ── LEO note ──────────────────────────────────────────────── */
+    .leo-note {
+      padding: 20px 22px;
+      background: var(--bg-off);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.875rem;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+    .leo-note-label {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+
+    /* ── Footer ────────────────────────────────────────────────── */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      background: var(--bg-off);
+      padding: 28px var(--px);
+    }
+    .footer-inner {
+      max-width: var(--max-w);
+      margin-inline: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .footer-brand {
+      font-weight: 700;
+      font-size: 0.9375rem;
+      color: var(--deep);
+    }
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      font-size: 0.875rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: var(--green); }
+    .footer-copy {
+      font-size: 0.8125rem;
+      color: var(--border);
+      width: 100%;
+    }
+
+    /* ── Responsive ────────────────────────────────────────────── */
+    @media (max-width: 620px) {
+      .nav-links  { display: none; }
+      .nav-toggle { display: flex; }
+      .nav-links.is-open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 64px; left: 0; right: 0; bottom: 0;
+        background: var(--bg);
+        padding: 24px var(--px);
+        gap: 4px;
+        z-index: 199;
+        border-top: 1px solid var(--border);
+      }
+      .nav-links.is-open .nav-link { font-size: 1rem; padding: 12px 16px; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .phase-head { flex-direction: column; align-items: flex-start; }
+      .phase-price { text-align: left; }
+    }
+
+    /* ── Scroll fade-in ─────────────────────────────────────────── */
+    .fade-in { opacity: 0; transform: translateY(18px); transition: opacity 0.45s ease, transform 0.45s ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navigation ────────────────────────────────────────────── -->
+  <nav class="site-nav" aria-label="Primary navigation">
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html" aria-label="CEC Audit by We Make IT">
+        <img src="assets/logo_circle_small.png" alt="" class="nav-brand-logo" width="32" height="32" aria-hidden="true" />
+        <div class="nav-brand-text">
+          <span class="nav-brand-name">CEC Audit</span>
+          <span class="nav-brand-sub">by We Make <span class="brand-it">IT</span></span>
+        </div>
+      </a>
+
+      <button class="nav-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Open navigation menu">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a class="nav-link" href="index.html">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 5.5l6-4 6 4V14a1 1 0 01-1 1H3a1 1 0 01-1-1V5.5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M6 15V9h4v6" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          Report
+        </a></li>
+        <li><a class="nav-link" href="solution.html">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M8 5v3l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Solution
+        </a></li>
+        <li><a class="nav-link" href="proposal.html" aria-current="page">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="3" y="2" width="10" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M6 6h4M6 9h4M6 12h2" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/></svg>
+          Proposal
+        </a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── Header ─────────────────────────────────────────────────── -->
+  <header class="proposal-header" role="banner">
+    <div class="proposal-header-inner">
+
+      <div class="wordmark">
+        <img
+          class="wordmark-logo"
+          src="assets/logo_circle_small.png"
+          alt=""
+          width="36"
+          height="36"
+          aria-hidden="true"
+        />
+        <span class="wordmark-text">WE MAKE <span>IT</span></span>
+      </div>
+
+      <p class="proposal-meta">
+        Proposal prepared for Circular Economy Company &middot; Referred by Barry D. &middot; June 2026
+      </p>
+
+      <h1 class="proposal-h1">
+        A clear message, a website that sells, and one team accountable for the result
+      </h1>
+
+      <p class="proposal-sub">
+        Following our discovery call and the audit we shared, here is my proposal.
+      </p>
+
+    </div>
+  </header>
+
+  <!-- ── Main ───────────────────────────────────────────────────── -->
+  <main>
+
+    <!-- ── What I'm Offering ──────────────────────────────────────── -->
+    <section class="section" aria-labelledby="offering-h2">
+      <div class="page-wrap">
+
+        <p class="section-label">The work</p>
+        <h2 class="section-h2" id="offering-h2">What I am offering</h2>
+        <p class="section-intro">Three phases of one-off work, plus ongoing monthly support. Each phase builds on the last.</p>
+
+        <div class="phase-stack">
+
+          <!-- Phase 0 -->
+          <article class="phase-card fade-in" aria-labelledby="phase0-name">
+            <div class="phase-head">
+              <div class="phase-title-group">
+                <span class="phase-tag">Phase 0</span>
+                <span class="phase-name" id="phase0-name">Digital Presence Foundations</span>
+              </div>
+              <div class="phase-price">
+                <div class="phase-price-amount">&euro;750</div>
+                <div class="phase-price-label">one-off</div>
+              </div>
+            </div>
+            <div class="phase-body">
+              <ul class="phase-items">
+                <li class="phase-item">
+                  <span class="phase-item-dot" aria-hidden="true"></span>
+                  <span>Google Business Profile set up and fully optimised for Google Maps, plus a review link you can share with current customers. The same link can go on the website to build credibility through real feedback.</span>
+                </li>
+                <li class="phase-item">
+                  <span class="phase-item-dot" aria-hidden="true"></span>
+                  <span>Your listings on key Irish business directories registered and corrected, so you show up consistently wherever people search for you.</span>
+                </li>
+                <li class="phase-item">
+                  <span class="phase-item-dot" aria-hidden="true"></span>
+                  <span>A review of your other social platforms, with adjustments where needed, so anyone who looks up your company sees a consistent, active presence.</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Phase 1 -->
+          <article class="phase-card fade-in" aria-labelledby="phase1-name">
+            <div class="phase-head">
+              <div class="phase-title-group">
+                <span class="phase-tag">Phase 1</span>
+                <span class="phase-name" id="phase1-name">Website Rebuild</span>
+              </div>
+              <div class="phase-price">
+                <div>
+                  <span class="phase-price-was">&euro;4,800</span>
+                  <span class="phase-price-amount">&euro;3,360</span>
+                </div>
+                <div class="phase-discount-badge">30% referral discount</div>
+                <div class="phase-price-label">one-off</div>
+              </div>
+            </div>
+            <div class="phase-body">
+              <ul class="phase-items">
+                <li class="phase-item">
+                  <span class="phase-item-dot" aria-hidden="true"></span>
+                  <span>Full rebuild on a fast, lightweight stack. The current site runs on a slow WordPress plugin that is heavy to load and leaves little room to improve UX, SEO, or analytics. Patching it would be a waste of money and time.</span>
+                </li>
+                <li class="phase-item">
+                  <span class="phase-item-dot" aria-hidden="true"></span>
+                  <span>Your message rewritten using your brief and modern sales and marketing best practice. Content reorganised into a clear funnel that guides visitors to one main call to action, linked to your analytics and future campaigns.</span>
+                </li>
+                <li class="phase-item">
+                  <span class="phase-item-dot" aria-hidden="true"></span>
+                  <span>Simplified navigation, so the site is easy to use with no overwhelm.</span>
+                </li>
+                <li class="phase-item">
+                  <span class="phase-item-dot" aria-hidden="true"></span>
+                  <span>SEO foundations built in: title tags, meta descriptions, social share images, with keywords chosen from research into what your potential customers are actually searching for.</span>
+                </li>
+                <li class="phase-item">
+                  <span class="phase-item-dot" aria-hidden="true"></span>
+                  <span>Mobile-optimised, fast-loading, and accessible.</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Phase 2 -->
+          <article class="phase-card fade-in" aria-labelledby="phase2-name">
+            <div class="phase-head">
+              <div class="phase-title-group">
+                <span class="phase-tag">Phase 2</span>
+                <span class="phase-name" id="phase2-name">Analytics and Tracking Setup</span>
+              </div>
+              <div class="phase-price">
+                <div class="phase-price-amount">&euro;450</div>
+                <div class="phase-price-label">one-off</div>
+              </div>
+            </div>
+            <div class="phase-body">
+              <ul class="phase-items">
+                <li class="phase-item">
+                  <span class="phase-item-dot" aria-hidden="true"></span>
+                  <span>Full analytics installation and conversion tracking, set up against your actual goals.</span>
+                </li>
+                <li class="phase-item">
+                  <span class="phase-item-dot" aria-hidden="true"></span>
+                  <span>A baseline dashboard so you can see real visitor behaviour from week one.</span>
+                </li>
+                <li class="phase-item">
+                  <span class="phase-item-dot" aria-hidden="true"></span>
+                  <span>This is essential before any paid campaigns. Without understanding what visitors do on the site, you risk wasting your ad budget.</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Reporting (included) -->
+          <article class="phase-card phase-card--included fade-in" aria-labelledby="reporting-name">
+            <div class="phase-head">
+              <div class="phase-title-group">
+                <span class="phase-tag">Throughout</span>
+                <span class="phase-name" id="reporting-name">Reporting and Check-ins</span>
+              </div>
+              <div class="phase-price">
+                <div class="phase-price-amount" style="color:var(--green);font-size:1rem;">Included</div>
+              </div>
+            </div>
+            <div class="phase-body">
+              <ul class="phase-items">
+                <li class="phase-item">
+                  <span class="phase-item-dot" aria-hidden="true"></span>
+                  <span>A written report after every completed chunk of work, so you always know exactly what has been done.</span>
+                </li>
+                <li class="phase-item">
+                  <span class="phase-item-dot" aria-hidden="true"></span>
+                  <span>Meetings as often as you have time for, to review progress and adjust direction together.</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Monthly Plan ──────────────────────────────────────────── -->
+    <section class="section" aria-labelledby="monthly-h2">
+      <div class="page-wrap">
+
+        <p class="section-label">Ongoing support</p>
+        <h2 class="section-h2" id="monthly-h2">Monthly plan</h2>
+
+        <p class="pricing-intro fade-in">
+          Everything below is included in one monthly price. No separate add-on fees for SEO, content, or social. The only cost outside this is any ad spend you choose to commit later, and that is never marked up by me.
+        </p>
+
+        <div class="pricing-grid fade-in" role="list">
+
+          <!-- Essential -->
+          <article class="pricing-card" role="listitem" aria-labelledby="essential-tier">
+            <div class="pricing-card-head">
+              <h3 class="pricing-tier" id="essential-tier">Essential</h3>
+              <div>
+                <span class="pricing-amount">&euro;650</span>
+                <span class="pricing-per">/month</span>
+              </div>
+            </div>
+            <div class="pricing-card-body">
+              <ul class="pricing-items">
+                <li class="pricing-item">
+                  <span class="pricing-item-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5.5l2 2 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  Monthly SEO review and adjustment
+                </li>
+                <li class="pricing-item">
+                  <span class="pricing-item-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5.5l2 2 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  Analytics review and progress reporting
+                </li>
+                <li class="pricing-item">
+                  <span class="pricing-item-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5.5l2 2 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  Website maintenance and updates
+                </li>
+                <li class="pricing-item">
+                  <span class="pricing-item-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5.5l2 2 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  Security checks and hosting management
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Growth (recommended) -->
+          <article class="pricing-card pricing-card--recommended" role="listitem" aria-labelledby="growth-tier">
+            <div class="pricing-card-head">
+              <div class="pricing-rec-badge">Recommended</div>
+              <h3 class="pricing-tier" id="growth-tier">Growth</h3>
+              <div>
+                <span class="pricing-amount">&euro;1,250</span>
+                <span class="pricing-per">/month</span>
+              </div>
+            </div>
+            <div class="pricing-card-body">
+              <ul class="pricing-items">
+                <li class="pricing-item">
+                  <span class="pricing-item-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5.5l2 2 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  Everything in Essential
+                </li>
+                <li class="pricing-item">
+                  <span class="pricing-item-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5.5l2 2 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  Monthly blog and website content
+                </li>
+                <li class="pricing-item">
+                  <span class="pricing-item-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5.5l2 2 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  LinkedIn management
+                </li>
+                <li class="pricing-item">
+                  <span class="pricing-item-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5.5l2 2 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  Ongoing UX research and improvements
+                </li>
+                <li class="pricing-item">
+                  <span class="pricing-item-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5.5l2 2 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  Active management of ad campaigns (e.g. Google Ads), campaign budget billed separately
+                </li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="pricing-summary fade-in" role="note">
+          Total to launch: <strong>&euro;4,360</strong> (website rebuild discounted, foundations and analytics at standard rate). Then <strong>&euro;1,250/month</strong> ongoing on the Growth tier.
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Consulting option ────────────────────────────────────── -->
+    <section class="section" aria-labelledby="consulting-h2">
+      <div class="page-wrap">
+        <div class="consulting-block fade-in">
+          <h2 class="consulting-h3" id="consulting-h2">If you would rather keep your current developer</h2>
+          <p class="consulting-body">
+            I can offer advice only, on a consulting basis at &euro;70 per hour or &euro;400 per day. No implementation, no outcome guarantee, since the work happens outside my hands.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Why this plan ────────────────────────────────────────── -->
+    <section class="section why-section" aria-labelledby="why-h2">
+      <div class="page-wrap">
+
+        <p class="section-label">The reasoning</p>
+        <h2 class="section-h2" id="why-h2">Why this plan is the recommended way to go</h2>
+
+        <div class="why-paras fade-in">
+
+          <p class="why-para">
+            <strong>Why a rebuild, not a patch.</strong> The current website runs on Slider Revolution, a heavy WordPress plugin that was built for visual effects, not performance. It slows every page load, limits what you can do with SEO and analytics, and makes even small changes complicated. Trying to improve results on that foundation is like decorating a room with a cracked floor. A clean rebuild takes weeks, not months, and gives you a site that is properly optimised from the start rather than something that needs constant workarounds.
+          </p>
+
+          <p class="why-para">
+            <strong>Why analytics must come before paid ads.</strong> If you run Google Ads or any other paid campaign on a site with no conversion tracking, you have no way of knowing which clicks led to enquiries and which ones cost money for nothing. Setting up analytics first means that when you do spend on ads, every euro is tracked back to a real outcome. Without that baseline, you are spending blind.
+          </p>
+
+          <p class="why-para">
+            <strong>Why SEO is a monthly job, not a one-time fix.</strong> Getting into Google does not happen after a single round of changes. Search rankings are earned over time through consistent, relevant content, a technically sound website, and regular adjustments based on what is and is not working. A monthly retainer keeps that process running. A one-off job delivers an initial boost and then fades without ongoing attention.
+          </p>
+
+          <p class="why-para">
+            <strong>One team, one brief, no gaps.</strong> The most common problem I see is a developer who built the site and a marketer who was brought in later, neither of whom knows the full picture. The developer does not think about the sales funnel. The marketer cannot change the site. The result is a website that looks fine but does not convert, and a marketing spend that pushes people to a page that lets them down. Having one provider responsible for the website, the message, and the marketing means none of those gaps exist. When something is not working, there is one person to call.
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── LEO note ─────────────────────────────────────────────── -->
+    <section class="section" aria-labelledby="leo-h2">
+      <div class="page-wrap">
+        <div class="leo-note fade-in">
+          <p class="leo-note-label">Worth checking on your side</p>
+          <p id="leo-h2">
+            Separately from this proposal, Irish businesses with up to 10 employees can apply for the Local Enterprise Office Trading Online Voucher Scheme, which offers up to &euro;2,500 (50% co-funded) towards digital services including website development, digital marketing, and SEO. Whether you qualify depends on your business size and current online setup, so it is worth a quick check with your Local Enterprise Office. I cannot confirm eligibility on your behalf, but it is worth knowing about. More information at <a href="https://www.localenterprise.ie/discover-business-supports/trading-online-voucher-scheme/" target="_blank" rel="noopener noreferrer">localenterprise.ie</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────────────── -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <span class="footer-brand">Lana &middot; We Make <span class="brand-it">IT</span></span>
+      <nav class="footer-links" aria-label="Footer links">
+        <a href="https://www.wemakeit.ie" target="_blank" rel="noopener noreferrer">wemakeit.ie</a>
+        <a href="mailto:info@wemakeit.ie">info@wemakeit.ie</a>
+        <a href="index.html">Report</a>
+        <a href="solution.html">Solution</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // nav toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const menu   = document.getElementById('nav-links');
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        const open = menu.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+      menu.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          menu.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    // scroll fade-in
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.07 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

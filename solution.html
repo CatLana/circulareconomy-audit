@@ -13,7 +13,7 @@
   <meta property="og:description" content="Proposed redesign and fixes for circulareconomy.ie, addressing UX, brand, SEO, and social issues identified in the audit by We Make IT." />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/logo_circle_small.png" />
+  <link rel="icon" type="image/png" href="assets/cec-logo.png" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -53,6 +53,10 @@
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M8 5v3l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           Solution
         </a></li>
+        <li><a class="nav-link" href="proposal.html">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="3" y="2" width="10" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M6 6h4M6 9h4M6 12h2" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/></svg>
+          Proposal
+        </a></li>
       </ul>
     </div>
   </nav>
@@ -76,10 +80,19 @@
     <section class="coming-soon-section" aria-labelledby="coming-soon-heading">
       <div class="container--narrow">
 
-        <span class="coming-soon-badge" aria-hidden="true">Work in progress</span>
+        <!-- Prototype preview header -->
+        <div style="margin-bottom:var(--space-6);">
+          <span style="font-size:0.625rem;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:#28ca41;background:rgba(40,202,65,0.1);border:1px solid rgba(40,202,65,0.25);border-radius:100px;padding:4px 14px;display:inline-block;margin-bottom:var(--space-4);">Prototype ready</span>
+          <h2 id="coming-soon-heading" style="font-size:clamp(1.125rem,3vw,1.625rem);font-weight:800;color:#fff;margin:0 0 var(--space-3);letter-spacing:-0.02em;line-height:1.2;">Proposed Redesign — Live Preview</h2>
+          <p style="color:rgba(255,255,255,0.5);font-size:var(--text-sm);max-width:52ch;line-height:1.65;margin:0 0 var(--space-5);">The full prototype is embedded below. Scroll inside it or open it in a new tab for the full experience.</p>
+          <a href="prototype.html" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;background:rgba(0,190,239,0.12);border:1px solid rgba(0,190,239,0.3);color:var(--color-sky);font-size:0.875rem;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;transition:background 0.15s;">
+            Open prototype in full tab
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M2 6.5h9M7.5 2.5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
 
-        <!-- Mockup placeholder banner -->
-        <div style="margin-bottom:var(--space-10);border-radius:var(--radius-xl);overflow:hidden;border:1px solid rgba(255,255,255,0.08);box-shadow:0 24px 64px rgba(0,0,0,0.45);" role="img" aria-label="Placeholder for the proposed circulareconomy.ie redesign mockup - coming soon">
+        <!-- Live iframe of the prototype -->
+        <div style="margin-bottom:var(--space-10);border-radius:var(--radius-xl);overflow:hidden;border:1px solid rgba(255,255,255,0.1);box-shadow:0 24px 64px rgba(0,0,0,0.45);">
           <!-- Browser chrome -->
           <div style="background:#141c2e;padding:11px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid rgba(255,255,255,0.06);">
             <span style="display:flex;gap:6px;flex-shrink:0;" aria-hidden="true">
@@ -87,39 +100,16 @@
               <span style="width:10px;height:10px;border-radius:50%;background:#ffbd2e;display:block;"></span>
               <span style="width:10px;height:10px;border-radius:50%;background:#28ca41;display:block;"></span>
             </span>
-            <span style="flex:1;background:rgba(255,255,255,0.06);border-radius:100px;height:22px;padding:0 12px;font-size:0.6875rem;color:rgba(255,255,255,0.32);display:flex;align-items:center;" aria-hidden="true">circulareconomy.ie - redesign preview by We Make IT</span>
+            <span style="flex:1;background:rgba(255,255,255,0.06);border-radius:100px;height:22px;padding:0 12px;font-size:0.6875rem;color:rgba(255,255,255,0.42);display:flex;align-items:center;" aria-hidden="true">circulareconomy.ie — proposed redesign by We Make IT</span>
+            <a href="prototype.html" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,0.35);font-size:0.625rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;white-space:nowrap;transition:color 0.15s;" aria-label="Open prototype in new tab">↗ Full tab</a>
           </div>
-          <!-- Wireframe body with coming-soon overlay -->
-          <div style="position:relative;background:linear-gradient(180deg,#0d1525 0%,#111827 100%);min-height:320px;padding:24px;display:flex;flex-direction:column;gap:12px;" aria-hidden="true">
-            <!-- Skeleton nav -->
-            <div style="display:flex;gap:10px;align-items:center;">
-              <span style="width:52px;height:10px;background:rgba(255,255,255,0.1);border-radius:3px;"></span>
-              <span style="flex:1;"></span>
-              <span style="width:40px;height:8px;background:rgba(255,255,255,0.06);border-radius:3px;"></span>
-              <span style="width:40px;height:8px;background:rgba(255,255,255,0.06);border-radius:3px;"></span>
-              <span style="width:40px;height:8px;background:rgba(255,255,255,0.06);border-radius:3px;"></span>
-              <span style="width:68px;height:22px;background:rgba(0,190,239,0.18);border-radius:3px;border:1px solid rgba(0,190,239,0.28);"></span>
-            </div>
-            <!-- Skeleton hero -->
-            <div style="background:rgba(255,255,255,0.03);border-radius:6px;padding:20px;">
-              <span style="display:block;width:210px;height:13px;background:rgba(255,255,255,0.1);border-radius:3px;margin-bottom:8px;"></span>
-              <span style="display:block;width:155px;height:8px;background:rgba(255,255,255,0.06);border-radius:3px;margin-bottom:6px;"></span>
-              <span style="display:block;width:120px;height:8px;background:rgba(255,255,255,0.06);border-radius:3px;margin-bottom:14px;"></span>
-              <span style="display:inline-block;width:88px;height:26px;background:rgba(0,190,239,0.22);border-radius:3px;"></span>
-            </div>
-            <!-- Skeleton card row -->
-            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
-              <span style="height:50px;background:rgba(255,255,255,0.03);border-radius:5px;border:1px solid rgba(255,255,255,0.05);"></span>
-              <span style="height:50px;background:rgba(255,255,255,0.03);border-radius:5px;border:1px solid rgba(255,255,255,0.05);"></span>
-              <span style="height:50px;background:rgba(255,255,255,0.03);border-radius:5px;border:1px solid rgba(255,255,255,0.05);"></span>
-            </div>
-            <!-- Coming Soon overlay -->
-            <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(3,5,10,0.78);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);gap:12px;padding:24px;text-align:center;">
-              <span style="font-size:0.625rem;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--color-sky);background:rgba(0,190,239,0.1);border:1px solid rgba(0,190,239,0.25);border-radius:100px;padding:4px 14px;">Coming Soon</span>
-              <h2 id="coming-soon-heading" style="font-size:clamp(1.125rem,3vw,1.625rem);font-weight:800;color:#fff;margin:0;letter-spacing:-0.02em;line-height:1.2;">Your Proposed Redesign Preview</h2>
-              <p style="color:rgba(255,255,255,0.5);font-size:var(--text-sm);max-width:42ch;line-height:1.65;margin:0;">This section can show a mockup of the redesigned circulareconomy.ie proposal. Send us a <a href="https://www.wemakeit.ie/en#quote" style="color:var(--color-sky);font-weight:500;">request</a> if you would like to see it.</p>
-            </div>
-          </div>
+          <!-- Iframe -->
+          <iframe
+            src="prototype.html"
+            title="Proposed circulareconomy.ie redesign prototype"
+            style="display:block;width:100%;height:760px;border:none;background:#1B4332;"
+            loading="lazy"
+          ></iframe>
         </div>
 
         <!-- Planned fixes list -->

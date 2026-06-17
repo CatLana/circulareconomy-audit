@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Waste Management &amp; Sustainability Audits Ireland | CEC</title>
+  <meta name="description" content="CEC helps Irish businesses cut waste costs by up to 25%, meet CSRD requirements, and achieve Zero Waste to Landfill certification — starting with a data-led audit." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,300;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Reset ──────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /*
+     * ── Colour system ─────────────────────────────────────────────
+     *
+     * Green-dominant, calm palette. Red for CTAs and inline links only.
+     * All text/bg pairs verified WCAG 2.1 AAA (7:1 normal, 4.5:1 large ≥18px):
+     *
+     * Light backgrounds:
+     *   --text-1  #1a2c23  on white           → 15.2:1  ✓ AAA
+     *   --text-1  #1a2c23  on --sage #f0f7f3  → 14.1:1  ✓ AAA
+     *   --text-2  #3d5247  on white           →  8.76:1  ✓ AAA
+     *   --text-2  #3d5247  on --sage #f0f7f3  →  8.16:1  ✓ AAA
+     *   --forest  #265a49  on white           →  7.89:1  ✓ AAA  (headings, eyebrows)
+     *   --forest  #265a49  on --sage #f0f7f3  →  7.36:1  ✓ AAA
+     *   --red     #991b1b  on white           →  8.37:1  ✓ AAA  (CTA text + inline links)
+     *   --red     #991b1b  on --sage #f0f7f3  →  7.79:1  ✓ AAA
+     *
+     * Dark backgrounds (--forest #265a49, L=0.083):
+     *   #ffffff             → 7.89:1  ✓ AAA
+     *   --on-dk-2 #e8f5ef  → 7.07:1  ✓ AAA
+     *
+     * Dark footer (--forest-deep #1a2c23, L=0.023):
+     *   #ffffff             → 18.9:1  ✓ AAA
+     *   --on-dk-2 #e8f5ef  → 17.1:1  ✓ AAA
+     */
+    :root {
+      --forest:       #265a49;   /* primary green — bg + heading/eyebrow text on light */
+      --forest-deep:  #1a2c23;   /* deepest green — footer bg + darkest text */
+      --green-brand:  #2f6b57;   /* brand reference — borders, decorative */
+      --green-light:  #4a8c72;   /* lighter accent on dark sections */
+
+      --sage:         #f0f7f3;   /* pale green section bg */
+      --sage-mid:     #dceee4;   /* step connectors, subtle borders */
+
+      --text-1:       #1a2c23;   /* primary text on all light bg */
+      --text-2:       #3d5247;   /* secondary text on all light bg */
+
+      --on-dk:        #ffffff;   /* text on dark green bg */
+      --on-dk-2:      #e8f5ef;   /* muted text on dark green bg */
+
+      --red:          #991b1b;   /* CTAs + inline links ONLY */
+      --red-hover:    #7f1d1d;
+
+      --white:        #ffffff;
+      --border:       rgba(38, 90, 73, 0.13);
+      --border-dk:    rgba(255, 255, 255, 0.1);
+
+      --font-d: 'Fraunces', Georgia, serif;
+      --font-b: 'Inter', system-ui, sans-serif;
+
+      --max-w: 1200px;
+      --px:    clamp(20px, 4vw, 48px);
+      --r-sm:  6px;
+      --r-md:  12px;
+      --r-lg:  18px;
+      --r-xl:  26px;
+
+      --sh-sm: 0 1px 4px rgba(26, 44, 35, 0.07);
+      --sh-md: 0 4px 20px rgba(26, 44, 35, 0.1);
+      --sh-lg: 0 12px 40px rgba(26, 44, 35, 0.13);
+    }
+
+    /* ── Base ───────────────────────────────────────────────────── */
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-b);
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text-1);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; display: block; }
+    a   { color: inherit; text-decoration: none; }
+    ul, ol { list-style: none; }
+
+    .container {
+      max-width: var(--max-w);
+      margin-inline: auto;
+      padding-inline: var(--px);
+    }
+
+    /* inline links — red only */
+    .link-inline {
+      color: var(--red);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+      transition: color 0.15s;
+    }
+    .link-inline:hover { color: var(--red-hover); }
+
+    /* ── Prototype notice ───────────────────────────────────────── */
+    .proto-bar {
+      background: var(--forest-deep);
+      color: var(--on-dk-2);
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-align: center;
+      padding: 8px var(--px);
+      letter-spacing: 0.02em;
+    }
+    .proto-bar strong { color: var(--on-dk); }
+
+    /* ── Navigation ─────────────────────────────────────────────── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: rgba(240, 247, 243, 0.97);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      height: 72px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    /* The CEC logo is a JPG (white bg). Keep it on a light nav and it looks perfect. */
+    .nav-logo-img {
+      height: 42px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      margin-left: auto;
+    }
+
+    .nav-links a {
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--text-1);
+      transition: color 0.15s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover { color: var(--forest); }
+
+    /* CTA nav button — red */
+    .nav-cta {
+      background: var(--red) !important;
+      color: var(--white) !important;
+      padding: 10px 22px;
+      border-radius: var(--r-sm);
+      font-weight: 600;
+      font-size: 0.875rem;
+      transition: background 0.15s, transform 0.1s !important;
+    }
+    .nav-cta:hover {
+      background: var(--red-hover) !important;
+      transform: translateY(-1px);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      color: var(--text-1);
+      margin-left: auto;
+    }
+
+    /* ── Hero (dark forest green) ────────────────────────────────── */
+    .hero {
+      background: var(--forest);
+      color: var(--on-dk);
+      padding: 96px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* leaf/organic radial texture in green tones */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 90% at 92% 35%, rgba(47, 107, 87, 0.5) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 55% at 0% 100%, rgba(26, 44, 35, 0.4) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    /* circular ring — echoes the CEC logo arrows */
+    .hero::after {
+      content: '';
+      position: absolute;
+      right: -160px;
+      top: -140px;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--on-dk-2);
+      margin-bottom: 20px;
+    }
+    .hero-eyebrow-pip {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--on-dk-2);
+      flex-shrink: 0;
+    }
+
+    .hero-h1 {
+      font-family: var(--font-d);
+      font-size: clamp(2.875rem, 5.5vw, 4.625rem);
+      font-weight: 800;
+      line-height: 1.04;
+      letter-spacing: -0.025em;
+      color: var(--on-dk);
+      margin-bottom: 24px;
+    }
+    .hero-h1 em {
+      font-style: italic;
+      color: var(--on-dk-2);
+      font-weight: 400;
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 1.4vw, 1.125rem);
+      line-height: 1.72;
+      color: var(--on-dk-2);
+      max-width: 52ch;
+      margin-bottom: 40px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 52px;
+    }
+
+    /* primary button — red (only use for CTAs) */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--red);
+      color: var(--white);
+      font-family: var(--font-b);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 14px 28px;
+      border-radius: var(--r-sm);
+      border: none;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.1s;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .btn-primary:hover {
+      background: var(--red-hover);
+      transform: translateY(-2px);
+    }
+
+    /* ghost button — white outline on dark bg */
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--on-dk-2);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(232, 245, 239, 0.35);
+      padding-bottom: 2px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .btn-ghost:hover {
+      color: var(--on-dk);
+      border-color: rgba(232, 245, 239, 0.7);
+    }
+
+    /* stat strip */
+    .hero-stats {
+      display: flex;
+      gap: 44px;
+      flex-wrap: wrap;
+      padding-top: 36px;
+      border-top: 1px solid var(--border-dk);
+    }
+    .hero-stat { display: flex; flex-direction: column; gap: 3px; }
+    .hero-stat-num {
+      font-family: var(--font-d);
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--on-dk);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .hero-stat-label {
+      font-size: 0.8125rem;
+      color: var(--on-dk-2);
+      line-height: 1.4;
+    }
+
+    /* hero right card — white bg so the logo shows cleanly */
+    .hero-panel {
+      background: var(--white);
+      border-radius: var(--r-xl);
+      padding: 36px;
+      box-shadow: var(--sh-lg);
+    }
+
+    .hero-panel-logo {
+      display: block;
+      margin-bottom: 24px;
+    }
+    .hero-panel-logo-img {
+      height: 52px;
+      width: auto;
+    }
+
+    .hero-panel-tagline {
+      font-family: var(--font-d);
+      font-size: 0.9375rem;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--text-2);
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-panel-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(38, 90, 73, 0.07);
+      border: 1px solid rgba(38, 90, 73, 0.18);
+      border-radius: 100px;
+      padding: 6px 14px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--forest);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero-panel-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .hero-panel-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: var(--text-2);
+      line-height: 1.5;
+    }
+    .hero-panel-check {
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: rgba(38, 90, 73, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--forest);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── Section base ────────────────────────────────────────────── */
+    .section { padding: 92px 0; }
+    .section--white  { background: var(--white); }
+    .section--sage   { background: var(--sage); }
+    .section--forest { background: var(--forest); color: var(--on-dk); }
+    .section--deep   { background: var(--forest-deep); color: var(--on-dk); }
+
+    /* eyebrow label */
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--forest);          /* green on light bg */
+      margin-bottom: 14px;
+    }
+    .section--forest .eyebrow,
+    .section--deep   .eyebrow {
+      color: var(--on-dk-2);         /* near-white on dark green bg */
+    }
+    .eyebrow-pip {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: currentColor;
+      flex-shrink: 0;
+    }
+
+    /* section headings */
+    .s-h2 {
+      font-family: var(--font-d);
+      font-size: clamp(1.875rem, 3.2vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--forest);          /* green on light bg */
+      margin-bottom: 14px;
+    }
+    .section--forest .s-h2,
+    .section--deep   .s-h2 { color: var(--on-dk); }
+
+    .s-intro {
+      font-size: 1.0625rem;
+      line-height: 1.72;
+      color: var(--text-2);
+      max-width: 58ch;
+      margin-bottom: 52px;
+    }
+    .section--forest .s-intro,
+    .section--deep   .s-intro { color: var(--on-dk-2); }
+
+    /* ── Who we help ─────────────────────────────────────────────── */
+    .help-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .help-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 36px 30px;
+      transition: box-shadow 0.2s, transform 0.15s;
+    }
+    .help-card:hover {
+      box-shadow: var(--sh-md);
+      transform: translateY(-2px);
+    }
+
+    .help-icon {
+      width: 46px; height: 46px;
+      border-radius: 11px;
+      background: rgba(38, 90, 73, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--forest);
+      margin-bottom: 20px;
+    }
+
+    .help-h3 {
+      font-family: var(--font-d);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--forest);
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .help-body {
+      font-size: 0.9375rem;
+      line-height: 1.65;
+      color: var(--text-2);
+      margin-bottom: 18px;
+    }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag {
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 4px 10px;
+      border-radius: 100px;
+      background: rgba(38, 90, 73, 0.07);
+      color: var(--forest);
+      border: 1px solid rgba(38, 90, 73, 0.14);
+    }
+
+    /* ── How it works ────────────────────────────────────────────── */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      position: relative;
+    }
+    .steps::before {
+      content: '';
+      position: absolute;
+      top: 27px;
+      left: 18%;
+      right: 18%;
+      height: 1px;
+      background: var(--sage-mid);
+    }
+
+    .step { position: relative; }
+
+    .step-num {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: var(--forest);
+      color: var(--on-dk);
+      font-family: var(--font-d);
+      font-size: 1.375rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 0 0 7px rgba(38, 90, 73, 0.09);
+    }
+
+    .step-h3 {
+      font-family: var(--font-d);
+      font-size: 1.375rem;
+      font-weight: 700;
+      color: var(--forest);
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .step-body {
+      font-size: 0.9375rem;
+      line-height: 1.65;
+      color: var(--text-2);
+      margin-bottom: 16px;
+    }
+
+    .step-callout {
+      padding: 12px 16px;
+      background: rgba(38, 90, 73, 0.06);
+      border-left: 3px solid var(--green-brand);
+      border-radius: 0 var(--r-sm) var(--r-sm) 0;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--forest);   /* #265a49 on very-pale-green bg → AAA ✓ */
+      line-height: 1.4;
+    }
+
+    /* ── Benefits ────────────────────────────────────────────────── */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .benefit {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 32px 28px;
+      transition: box-shadow 0.2s, transform 0.15s;
+      border-top: 3px solid var(--forest);
+    }
+    .benefit:hover {
+      box-shadow: var(--sh-lg);
+      transform: translateY(-3px);
+    }
+    .benefit--wide { grid-column: span 2; }
+
+    /*
+     * Large stat: font-size 2.875rem (46px) = large text per WCAG.
+     * Using --forest #265a49 on white → 7.89:1 = AAA even for normal text.
+     */
+    .benefit-stat {
+      font-family: var(--font-d);
+      font-size: 2.875rem;
+      font-weight: 900;
+      color: var(--forest);
+      line-height: 1;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .benefit-h3 {
+      font-size: 1.0625rem;
+      font-weight: 700;
+      color: var(--text-1);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .benefit-body {
+      font-size: 0.9375rem;
+      line-height: 1.65;
+      color: var(--text-2);
+    }
+
+    /* ── Why CEC (dark green bg) ─────────────────────────────────── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .why-card {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--r-lg);
+      padding: 36px 30px;
+      transition: background 0.2s;
+    }
+    .why-card:hover { background: rgba(255, 255, 255, 0.11); }
+
+    .why-icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      background: rgba(232, 245, 239, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--on-dk-2);
+      margin-bottom: 20px;
+    }
+
+    .why-h3 {
+      font-family: var(--font-d);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--on-dk);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+
+    .why-body {
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: var(--on-dk-2);
+    }
+
+    /* ── Case studies ────────────────────────────────────────────── */
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .case-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.2s, transform 0.15s;
+    }
+    .case-card:hover {
+      box-shadow: var(--sh-md);
+      transform: translateY(-2px);
+    }
+
+    .case-sector {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--forest);
+      margin-bottom: 8px;
+    }
+
+    .case-name {
+      font-family: var(--font-d);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-1);
+      margin-bottom: 12px;
+      line-height: 1.15;
+    }
+
+    .case-body {
+      font-size: 0.9375rem;
+      line-height: 1.65;
+      color: var(--text-2);
+      flex: 1;
+      margin-bottom: 24px;
+    }
+
+    /* case link — use red for inline link per user request */
+    .case-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--red);   /* inline link = red, 8.37:1 on white ✓ AAA */
+      align-self: flex-start;
+      border-bottom: 1.5px solid rgba(153, 27, 27, 0.3);
+      padding-bottom: 2px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .case-link:hover {
+      color: var(--red-hover);
+      border-color: rgba(127, 29, 29, 0.5);
+    }
+
+    /* ── Testimonial ──────────────────────────────────────────────── */
+    .testimonial-wrap {
+      max-width: 820px;
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .t-mark {
+      font-family: var(--font-d);
+      font-size: 5rem;
+      line-height: 0.55;
+      color: var(--sage-mid);
+      display: block;
+      margin-bottom: 28px;
+      font-style: italic;
+    }
+
+    .t-quote {
+      font-family: var(--font-d);
+      font-size: clamp(1.25rem, 2.2vw, 1.6875rem);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.52;
+      color: var(--forest);   /* #265a49 on white → 7.89:1 ✓ AAA */
+      margin-bottom: 36px;
+    }
+
+    .t-attr { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+    .t-name { font-weight: 700; font-size: 1rem; color: var(--text-1); }
+    .t-role { font-size: 0.875rem; color: var(--text-2); }
+
+    /* ── CTA section (dark green) ────────────────────────────────── */
+    .cta-wrap {
+      text-align: center;
+      max-width: 660px;
+      margin-inline: auto;
+      padding: 28px 0 12px;
+    }
+    .cta-sub {
+      font-size: 1.0625rem;
+      line-height: 1.72;
+      color: var(--on-dk-2);
+      margin-bottom: 40px;
+    }
+    .cta-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn-outline-dk {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1.5px solid rgba(232, 245, 239, 0.35);
+      color: var(--on-dk-2);
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 13px 24px;
+      border-radius: var(--r-sm);
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .btn-outline-dk:hover {
+      border-color: rgba(232, 245, 239, 0.75);
+      color: var(--on-dk);
+    }
+
+    /* ── Footer ──────────────────────────────────────────────────── */
+    .footer {
+      background: var(--forest-deep);
+      padding: 60px 0 40px;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border-dk);
+    }
+
+    /* white pill behind logo so JPG background is invisible */
+    .footer-logo-wrap {
+      display: inline-block;
+      background: var(--white);
+      border-radius: var(--r-md);
+      padding: 10px 16px;
+      margin-bottom: 16px;
+    }
+    .footer-logo-img {
+      height: 36px;
+      width: auto;
+    }
+
+    .footer-tagline {
+      font-size: 0.9375rem;
+      font-style: italic;
+      font-family: var(--font-d);
+      font-weight: 300;
+      color: var(--on-dk-2);
+      margin-bottom: 18px;
+    }
+
+    .footer-detail {
+      font-size: 0.875rem;
+      color: var(--on-dk-2);
+      line-height: 1.75;
+    }
+    .footer-detail a {
+      color: var(--on-dk-2);
+      transition: color 0.15s;
+    }
+    .footer-detail a:hover { color: var(--on-dk); }
+
+    .footer-col-title {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.38);
+      margin-bottom: 16px;
+    }
+
+    .footer-links { display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a {
+      font-size: 0.9375rem;
+      color: var(--on-dk-2);
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: var(--on-dk); }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-copy { font-size: 0.8125rem; color: rgba(255, 255, 255, 0.3); }
+    .footer-ei {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.8125rem;
+      color: var(--on-dk-2);
+    }
+    .footer-ei-pip {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--green-brand);
+    }
+
+    /* ── Responsive ──────────────────────────────────────────────── */
+    @media (max-width: 1000px) {
+      .hero-inner  { grid-template-columns: 1fr; }
+      .hero-panel  { display: none; }
+      .footer-top  { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 800px) {
+      .section       { padding: 68px 0; }
+      .help-grid     { grid-template-columns: 1fr; gap: 16px; }
+      .steps         { grid-template-columns: 1fr; gap: 40px; }
+      .steps::before { display: none; }
+      .benefits-grid { grid-template-columns: 1fr 1fr; }
+      .benefit--wide { grid-column: span 2; }
+      .why-grid      { grid-template-columns: 1fr; }
+      .cases-grid    { grid-template-columns: 1fr; }
+      .footer-top    { grid-template-columns: 1fr; gap: 32px; }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links  { display: none; }
+      .nav-toggle { display: flex; margin-left: auto; }
+      .nav-links.is-open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 72px; left: 0; right: 0; bottom: 0;
+        background: var(--sage);
+        padding: 32px var(--px);
+        gap: 24px;
+        z-index: 199;
+        overflow-y: auto;
+      }
+      .nav-links.is-open .nav-cta { align-self: flex-start; padding: 12px 24px; font-size: 1rem; }
+      .hero { padding: 64px 0 52px; }
+      .hero-stats  { gap: 20px; }
+      .benefits-grid { grid-template-columns: 1fr; }
+      .benefit--wide { grid-column: span 1; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="proto-bar" role="note">
+    <strong>Prototype</strong> — Proposed redesign for circulareconomy.ie &nbsp;·&nbsp; Prepared by We Make IT
+  </div>
+
+  <!-- ── Navigation ─────────────────────────────────────────────── -->
+  <nav class="nav" aria-label="Primary navigation">
+    <div class="container nav-inner">
+
+      <a class="nav-logo" href="#" aria-label="CEC — Circular Economy Company home">
+        <img
+          class="nav-logo-img"
+          src="assets/cec-logo.jpg"
+          alt="CEC — Circular Economy Company"
+          height="42"
+        />
+      </a>
+
+      <button class="nav-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Open navigation">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+          <path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="#what-we-do">What We Do</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#case-studies">Case Studies</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="nav-cta" href="#book-audit">Book a Waste Audit</a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ── Hero ───────────────────────────────────────────────────── -->
+    <section class="hero" aria-labelledby="hero-h1">
+      <div class="container hero-inner">
+
+        <div class="hero-content">
+          <p class="hero-eyebrow">
+            <span class="hero-eyebrow-pip" aria-hidden="true"></span>
+            Ireland's Circular Economy Specialists
+          </p>
+          <h1 class="hero-h1" id="hero-h1">
+            Make Your<br><em>Waste Work.</em>
+          </h1>
+          <p class="hero-sub">
+            We help Irish businesses cut waste costs, meet CSRD requirements, and achieve Zero Waste to Landfill certification — starting with a data-led audit that shows you exactly where to begin.
+          </p>
+          <div class="hero-actions">
+            <a class="btn-primary" href="#book-audit">
+              Book a Free Waste Audit
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a class="btn-ghost" href="#how-it-works">
+              See how it works
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M7 2v10M3 8l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+          <div class="hero-stats" role="list" aria-label="Key results">
+            <div class="hero-stat" role="listitem">
+              <span class="hero-stat-num">25%</span>
+              <span class="hero-stat-label">Average waste cost reduction</span>
+            </div>
+            <div class="hero-stat" role="listitem">
+              <span class="hero-stat-num">95%</span>
+              <span class="hero-stat-label">Less time on waste reporting</span>
+            </div>
+            <div class="hero-stat" role="listitem">
+              <span class="hero-stat-num">9+</span>
+              <span class="hero-stat-label">Years serving Irish business</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- right panel — white card so the JPG logo displays correctly -->
+        <div class="hero-panel" aria-hidden="true">
+          <div class="hero-panel-logo">
+            <img
+              class="hero-panel-logo-img"
+              src="assets/cec-logo.jpg"
+              alt=""
+              height="52"
+            />
+          </div>
+          <p class="hero-panel-tagline">"Never refuse to reuse"</p>
+          <div class="hero-panel-badge">
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+              <path d="M5.5 1l1.1 2.3 2.6.38-1.87 1.82.44 2.57L5.5 7 3.27 8.1l.44-2.57L1.8 3.68l2.6-.38L5.5 1z" fill="currentColor"/>
+            </svg>
+            Enterprise Ireland Provider
+          </div>
+          <ul class="hero-panel-list">
+            <li class="hero-panel-item">
+              <span class="hero-panel-check">
+                <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+                  <path d="M2 6l2.5 2.5L9 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              Waste audit to action plan in weeks
+            </li>
+            <li class="hero-panel-item">
+              <span class="hero-panel-check">
+                <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+                  <path d="M2 6l2.5 2.5L9 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              CSRD-ready reporting from day one
+            </li>
+            <li class="hero-panel-item">
+              <span class="hero-panel-check">
+                <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+                  <path d="M2 6l2.5 2.5L9 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              Cork-based, serving all of Ireland
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Who we help (white) ────────────────────────────────────── -->
+    <section class="section section--white" id="what-we-do" aria-labelledby="help-h2">
+      <div class="container">
+        <p class="eyebrow"><span class="eyebrow-pip" aria-hidden="true"></span>Who we help</p>
+        <h2 class="s-h2" id="help-h2">Built for businesses that take waste seriously</h2>
+        <p class="s-intro">CEC works with medium and large Irish companies that have the most to gain from a structured approach to waste management — and the most to lose from ignoring it.</p>
+
+        <div class="help-grid">
+
+          <div class="help-card">
+            <div class="help-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.75"/>
+                <path d="M3 9h18M9 9v12" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+                <path d="M15 13h1.5M15 16h1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="help-h3">Your sector</h3>
+            <p class="help-body">We work with manufacturers, pharmaceutical companies, food and drink producers, hospitality groups, and multi-site operations across Ireland.</p>
+            <div class="tags">
+              <span class="tag">Manufacturing</span>
+              <span class="tag">Pharmaceutical</span>
+              <span class="tag">Food &amp; Drink</span>
+              <span class="tag">Hospitality</span>
+              <span class="tag">Multi-site</span>
+            </div>
+          </div>
+
+          <div class="help-card">
+            <div class="help-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.75"/>
+                <path d="M4 20c0-4 3.58-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="help-h3">Your role</h3>
+            <p class="help-body">You need to demonstrate cost control and ESG progress with data to back it up — to boards, clients, and regulators — without digging through waste invoices to find it.</p>
+            <div class="tags">
+              <span class="tag">Financial Controller</span>
+              <span class="tag">CFO</span>
+              <span class="tag">Sustainability Manager</span>
+              <span class="tag">Operations Director</span>
+            </div>
+          </div>
+
+          <div class="help-card">
+            <div class="help-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.75"/>
+                <path d="M12 8v4l2.5 2.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="help-h3">Your situation</h3>
+            <p class="help-body">You face rising waste costs, mandatory CSRD reporting, pressure on your ESG credentials, or simply no clear picture of where your waste money is actually going.</p>
+            <div class="tags">
+              <span class="tag">Rising waste costs</span>
+              <span class="tag">CSRD obligations</span>
+              <span class="tag">ESG reporting</span>
+              <span class="tag">Zero waste targets</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── How it works (sage green) ──────────────────────────────── -->
+    <section class="section section--sage" id="how-it-works" aria-labelledby="steps-h2">
+      <div class="container">
+        <p class="eyebrow"><span class="eyebrow-pip" aria-hidden="true"></span>Through what</p>
+        <h2 class="s-h2" id="steps-h2">We know where to start.<br>Most companies don't.</h2>
+        <p class="s-intro">Every engagement begins with a structured waste audit — not a sales exercise, but a measurement. We establish your exact position before recommending a single action. Data first. Solutions second.</p>
+
+        <div class="steps" role="list">
+
+          <div class="step" role="listitem">
+            <div class="step-num" aria-hidden="true">1</div>
+            <h3 class="step-h3">Waste Audit</h3>
+            <p class="step-body">We analyse your waste streams, contracts, costs, and data — onsite and remotely. You get a complete, accurate picture of where you stand today, not guesswork.</p>
+            <div class="step-callout">Powered by Eiravato SA — live data platform, not spreadsheets</div>
+          </div>
+
+          <div class="step" role="listitem">
+            <div class="step-num" aria-hidden="true">2</div>
+            <h3 class="step-h3">Intelligent Plan</h3>
+            <p class="step-body">You receive a data-backed action plan with specific cost targets, compliance milestones, and a roadmap to Zero Waste to Landfill — prioritised by impact.</p>
+            <div class="step-callout">Actions ranked by cost impact — you always know what to do next</div>
+          </div>
+
+          <div class="step" role="listitem">
+            <div class="step-num" aria-hidden="true">3</div>
+            <h3 class="step-h3">Measurable Results</h3>
+            <p class="step-body">Reduced costs, automated CSRD-ready reporting, and a clear path to certification — tracked in your live dashboard. We stay involved to make sure the plan delivers.</p>
+            <div class="step-callout">Ongoing monitoring — not a one-off report that gathers dust</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Benefits (white) ───────────────────────────────────────── -->
+    <section class="section section--white" id="benefits" aria-labelledby="benefits-h2">
+      <div class="container">
+        <p class="eyebrow"><span class="eyebrow-pip" aria-hidden="true"></span>What you gain</p>
+        <h2 class="s-h2" id="benefits-h2">Five reasons your finance team will thank you</h2>
+        <p class="s-intro">Every CEC engagement is designed to deliver outcomes you can put in a board report — from cost savings to compliance to competitive advantage.</p>
+
+        <div class="benefits-grid" role="list">
+
+          <article class="benefit" role="listitem">
+            <div class="benefit-stat">25%</div>
+            <h3 class="benefit-h3">Cut waste costs</h3>
+            <p class="benefit-body">We identify overcharges, inefficient streams, and poor contract terms. Our clients reduce waste disposal costs by up to 25% — typically within the first year.</p>
+          </article>
+
+          <article class="benefit" role="listitem">
+            <div class="benefit-stat">95%</div>
+            <h3 class="benefit-h3">Save time on reporting</h3>
+            <p class="benefit-body">Replace manual spreadsheets and invoice chasing with automated, audit-ready reports. What used to take days takes minutes.</p>
+          </article>
+
+          <article class="benefit" role="listitem">
+            <div class="benefit-stat" style="font-size:2.125rem;">CSRD</div>
+            <h3 class="benefit-h3">Meet compliance requirements</h3>
+            <p class="benefit-body">The EU's Corporate Sustainability Reporting Directive affects over 50,000 companies. CEC tracks every waste reporting obligation so your team does not miss a deadline.</p>
+          </article>
+
+          <article class="benefit" role="listitem">
+            <div class="benefit-stat">0</div>
+            <h3 class="benefit-h3">Zero waste to landfill</h3>
+            <p class="benefit-body">Get certified. A Zero Waste to Landfill accreditation is increasingly required in enterprise tenders. CEC maps your path and supports the full certification process.</p>
+          </article>
+
+          <article class="benefit benefit--wide" role="listitem">
+            <div class="benefit-stat">↑</div>
+            <h3 class="benefit-h3">A stronger ESG rating — and the contracts that come with it</h3>
+            <p class="benefit-body">A better ESG profile wins tenders, attracts better suppliers, and signals to enterprise clients that your business is built to last. CEC gives you the data, the certification, and the reporting to back that claim up in every procurement process you enter.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Why CEC (dark forest green) ───────────────────────────── -->
+    <section class="section section--forest" id="why-us" aria-labelledby="why-h2">
+      <div class="container">
+        <p class="eyebrow"><span class="eyebrow-pip" aria-hidden="true"></span>Why CEC</p>
+        <h2 class="s-h2" id="why-h2">Different because we start with an audit</h2>
+        <p class="s-intro">Other consultants ask you to commit to a solution before they understand your problem. We measure first. That is what makes our recommendations specific, actionable, and fundable.</p>
+
+        <div class="why-grid">
+
+          <div class="why-card">
+            <div class="why-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <path d="M11 3l1.8 3.7 4.1.6-3 2.9.71 4.1L11 12.3l-3.61 1.9.71-4.1-3-2.9 4.1-.6L11 3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="why-h3">We know where to start</h3>
+            <p class="why-body">Most companies do not have a clear picture of their waste position. Before we recommend anything, we audit your specific streams, costs, and contracts. Our plan is built on your data — not a template.</p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <rect x="3" y="3" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M7 11l2.5 2.5L15 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="why-h3">Eiravato platform — not a PDF</h3>
+            <p class="why-body">We use the Eiravato SA platform to capture, organise, and track your waste data live. You get a real-time dashboard with ongoing visibility, not a report that sits in a drawer until next year.</p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <circle cx="11" cy="8.5" r="3.5" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M4 20c0-3.87 3.13-7 7-7s7 3.13 7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="why-h3">Senior experts from day one</h3>
+            <p class="why-body">You deal directly with experienced sustainability professionals, not a junior account manager. For decisions that affect your compliance, your costs, and your reputation, that distinction matters.</p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <path d="M11 2C6.48 2 2 6.48 2 11c0 6 9 11 9 11s9-5 9-11c0-4.52-3.48-9-9-9z" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="11" cy="10.5" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <h3 class="why-h3">9 years of Irish industry knowledge</h3>
+            <p class="why-body">CEC is a Cork-based company with nearly a decade of hands-on experience across Irish manufacturing, pharmaceutical, food production, and hospitality. Enterprise Ireland recognised, with local knowledge no global firm can match.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Case studies (sage green) ──────────────────────────────── -->
+    <section class="section section--sage" id="case-studies" aria-labelledby="cases-h2">
+      <div class="container">
+        <p class="eyebrow"><span class="eyebrow-pip" aria-hidden="true"></span>Proven results</p>
+        <h2 class="s-h2" id="cases-h2">Irish businesses we have helped</h2>
+        <p class="s-intro">From pharmaceutical multinationals to food producers to hotel groups — a consistent methodology that delivers measurable outcomes every time.</p>
+
+        <div class="cases-grid">
+
+          <article class="case-card">
+            <p class="case-sector">Manufacturing</p>
+            <h3 class="case-name">Abcon</h3>
+            <p class="case-body">CEC conducted a full waste audit of Abcon's production facility, identifying segregation gaps and developing a digital tracking system — leading to a formalised ISO-aligned Waste Management SOP and a clear path to Zero Waste to Landfill certification.</p>
+            <a class="case-link" href="https://www.circulareconomy.ie/case-studies/abcon" target="_blank" rel="noopener noreferrer">
+              Read case study
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </article>
+
+          <article class="case-card">
+            <p class="case-sector">Pharmaceutical</p>
+            <h3 class="case-name">Gilead</h3>
+            <p class="case-body">CEC supported Gilead's Irish operations with end-to-end waste data management and ESG compliance reporting, ensuring all waste streams met regulatory standards and contributed to their global sustainability disclosures.</p>
+            <a class="case-link" href="https://www.circulareconomy.ie/case-studies" target="_blank" rel="noopener noreferrer">
+              Read case study
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </article>
+
+          <article class="case-card">
+            <p class="case-sector">Hospitality</p>
+            <h3 class="case-name">Maryborough House Hotel</h3>
+            <p class="case-body">The hotel's Financial Controller needed real-time visibility of sustainability progress. CEC implemented the Intelligent Waste Management Platform, enabling continuous monitoring, structured ESG reporting, and meaningful cost reduction.</p>
+            <a class="case-link" href="https://www.circulareconomy.ie/case-studies" target="_blank" rel="noopener noreferrer">
+              Read case study
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Testimonial (white) ─────────────────────────────────────── -->
+    <section class="section section--white" aria-labelledby="t-label">
+      <div class="container">
+        <div class="testimonial-wrap">
+          <span class="t-mark" aria-hidden="true">"</span>
+          <blockquote>
+            <p class="t-quote" id="t-label">
+              CEC's practical knowledge of the waste industry and their Intelligent Waste Management Platform has enabled us to monitor our sustainability progress in real time. The difference from our previous approach is significant.
+            </p>
+            <footer class="t-attr">
+              <cite class="t-name" style="font-style:normal;">Financial Controller</cite>
+              <span class="t-role">Maryborough House Hotel, Cork</span>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA (dark forest green) ────────────────────────────────── -->
+    <section class="section section--forest" id="book-audit" aria-labelledby="cta-h2">
+      <div class="container">
+        <div class="cta-wrap">
+          <p class="eyebrow" style="justify-content:center;"><span class="eyebrow-pip" aria-hidden="true"></span>Get started</p>
+          <h2 class="s-h2" id="cta-h2">
+            Ready to find out what your waste is really costing you?
+          </h2>
+          <p class="cta-sub">
+            Book a free waste audit. No obligation. We will show you exactly where you stand, what it is costing you, and what to do about it — in writing, with data.
+          </p>
+          <div class="cta-actions">
+            <a class="btn-primary" href="mailto:info@circulareconomy.ie">
+              Book a Free Audit
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a class="btn-outline-dk" href="tel:+353217355755">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M2 3.5l2 2-1.2 1.9L5 9.5c1 1 2 2 2 2l1.9-1.2 2 2 2-1.5C13 5 5 1 2 3.5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+              +353 (21) 735 5755
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer (deepest green) ─────────────────────────────────── -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-top">
+
+        <div>
+          <!-- white pill so JPG bg doesn't clash with dark footer -->
+          <div class="footer-logo-wrap">
+            <img
+              class="footer-logo-img"
+              src="assets/cec-logo.jpg"
+              alt="CEC — Circular Economy Company"
+              height="36"
+            />
+          </div>
+          <p class="footer-tagline">"Never refuse to reuse"</p>
+          <div class="footer-detail">
+            Circular Economy Company<br>
+            Cork, Ireland<br><br>
+            <a href="tel:+353217355755">+353 (21) 735 5755</a><br>
+            <a href="mailto:info@circulareconomy.ie">info@circulareconomy.ie</a>
+          </div>
+        </div>
+
+        <div>
+          <p class="footer-col-title">Services</p>
+          <nav class="footer-links" aria-label="Services">
+            <a href="https://www.circulareconomy.ie/waste-audit" target="_blank" rel="noopener noreferrer">Waste Audit</a>
+            <a href="https://www.circulareconomy.ie/zero-waste-to-landfill-certification" target="_blank" rel="noopener noreferrer">Zero Waste to Landfill</a>
+            <a href="https://www.circulareconomy.ie/c-s-r-d-reporting-compliance" target="_blank" rel="noopener noreferrer">CSRD Compliance</a>
+            <a href="https://www.circulareconomy.ie" target="_blank" rel="noopener noreferrer">ESG &amp; SDG Reporting</a>
+            <a href="https://www.circulareconomy.ie" target="_blank" rel="noopener noreferrer">Multisite Intelligence</a>
+          </nav>
+        </div>
+
+        <div>
+          <p class="footer-col-title">Company</p>
+          <nav class="footer-links" aria-label="Company">
+            <a href="https://www.circulareconomy.ie/case-studies" target="_blank" rel="noopener noreferrer">Case Studies</a>
+            <a href="https://www.circulareconomy.ie/about" target="_blank" rel="noopener noreferrer">About CEC</a>
+            <a href="https://www.circulareconomy.ie" target="_blank" rel="noopener noreferrer">Blog &amp; Resources</a>
+            <a href="https://www.linkedin.com/company/cecireland" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="#book-audit">Book an Audit</a>
+          </nav>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Circular Economy Company Limited. All rights reserved.</p>
+        <p class="footer-ei">
+          <span class="footer-ei-pip" aria-hidden="true"></span>
+          Enterprise Ireland Recognised Provider
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const menu   = document.getElementById('nav-links');
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        const open = menu.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+      menu.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          menu.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+  </script>
+
+</body>
+</html>
