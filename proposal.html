@@ -252,6 +252,79 @@
       border-radius: 8px;
     }
 
+    /* maintenance banner — full-width horizontal card above the main grid */
+    .pricing-maintenance {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      padding: 22px 28px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .pricing-maint-left { flex: 1; min-width: 180px; }
+    .pricing-maint-tag {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 3px;
+    }
+    .pricing-maint-name {
+      font-size: 1.0625rem;
+      font-weight: 700;
+      color: var(--deep);
+      margin-bottom: 2px;
+      line-height: 1.2;
+    }
+    .pricing-maint-sub {
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+
+    .pricing-maint-items {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      flex: 2;
+      min-width: 220px;
+    }
+    .pricing-maint-item {
+      display: flex;
+      gap: 9px;
+      font-size: 0.875rem;
+      line-height: 1.5;
+      color: var(--text);
+    }
+    .pricing-maint-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--tint-mid);
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+
+    .pricing-maint-price {
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .pricing-maint-amount {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--deep);
+      line-height: 1;
+    }
+    .pricing-maint-per {
+      font-size: 0.8125rem;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
     .pricing-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -534,7 +607,9 @@
         overflow-y: auto;
       }
       .nav-links.is-open .nav-link { font-size: 1rem; padding: 12px 16px; }
-      .pricing-grid    { grid-template-columns: 1fr; }
+      .pricing-grid      { grid-template-columns: 1fr; }
+      .pricing-maintenance { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .pricing-maint-price { align-self: flex-start; text-align: left; }
       .payment-splits  { grid-template-columns: 1fr; }
       .payment-split:first-child { border-right: none; border-bottom: 1px solid var(--border); }
       .phase-head      { flex-direction: column; align-items: flex-start; }
@@ -753,6 +828,33 @@
         <p class="pricing-intro fade-in">
           Everything in your plan is one monthly price with no separate fees for SEO, content, or social. The only extra cost is any ad spend you choose later, and that is never marked up by me.
         </p>
+
+        <!-- Maintenance banner -->
+        <div class="pricing-maintenance fade-in" role="region" aria-label="Maintenance plan">
+          <div class="pricing-maint-left">
+            <p class="pricing-maint-tag">Starter</p>
+            <p class="pricing-maint-name">Maintenance</p>
+            <p class="pricing-maint-sub">Keep the site running</p>
+          </div>
+          <ul class="pricing-maint-items">
+            <li class="pricing-maint-item">
+              <span class="pricing-maint-dot" aria-hidden="true"></span>
+              Hosting and domain management — renewals, updates, and making sure the site stays live
+            </li>
+            <li class="pricing-maint-item">
+              <span class="pricing-maint-dot" aria-hidden="true"></span>
+              Basic security monitoring and software updates
+            </li>
+            <li class="pricing-maint-item">
+              <span class="pricing-maint-dot" aria-hidden="true"></span>
+              1 content update request per month (text, images, or minor page changes)
+            </li>
+          </ul>
+          <div class="pricing-maint-price">
+            <div class="pricing-maint-amount">&euro;149</div>
+            <div class="pricing-maint-per">/month</div>
+          </div>
+        </div>
 
         <div class="pricing-grid fade-in" role="list">
 
@@ -1019,6 +1121,12 @@
               </tr>
             </thead>
             <tbody>
+              <tr>
+                <td>Maintenance (Starter)</td>
+                <td>&euro;149/mo</td>
+                <td class="cost-saving">&euro;19/mo</td>
+                <td>&euro;130/mo</td>
+              </tr>
               <tr>
                 <td>Web Presence (Essential)</td>
                 <td>&euro;650/mo</td>
